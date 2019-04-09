@@ -1,0 +1,43 @@
+https://datamakessense.com/mysql-to-html-with-python/
+
+        <td>{{data[x].get("bookid")}}</td>
+        <td>{{data[x].get("uesrid")}}</td>
+        <td>{{data[x].get("comment")}}</td>
+        <td>{{data[x].get("bookname")}}</td>
+
+
+        <div class="container">   
+<input id="myInput" type="text" placeholder="Search..">
+<br>  
+{% for x in range(leng): %}       
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+
+        <th>Bookid</th>
+        <th>UserId</th>
+        <th>Comment</th>
+        <th>Book Name</th>
+      </tr>
+<tr>
+        <td>{{data[x].get("bookid")}}</td>
+        <td>{{data[x].get("uesrid")}}</td>
+        <td>{{data[x].get("comment")}}</td>
+        <td>{{data[x].get("bookname")}}</td>
+</tr>
+        <td>{{data[x].get("bookid")}}</td>
+        <td>{{data[x].get("uesrid")}}</td>
+        <td>{{data[x].get("comment")}}</td>
+        <td>{{data[x].get("bookname")}}</td>
+<tr>
+        <td>{{data[x].get("bookid")}}</td>
+        <td>{{data[x].get("uesrid")}}</td>
+        <td>{{data[x].get("comment")}}</td>
+        <td>{{data[x].get("bookname")}}</td>
+</tr>
+{% endfor %}
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

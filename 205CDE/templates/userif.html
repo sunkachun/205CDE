@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+td{
+  border:1 px solid;
+  text-align: left;
+  padding: 5px;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+
+<div class="container demo">
+
+	<div class="row align-items-center">
+		<div class="col"><span>Welcome to XXX Forum</span></div>
+	</div>
+
+<!-- ==========================nav==================================== -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">XXX Forum</a>
+
+    <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#collapsibleNavbar">
+    	<span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-items">
+      	<a href="" class="nav-link">Home</a>
+      </li>
+
+      <li class="nav-item dropdown">
+      	<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="CommonNovel">Common Novel</a>
+        <div class="dropdown-menu">
+          <a href="science" class="dropdown-item">Science</a>
+          <a href="MartialArt" class="dropdown-item">Martial Art</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+      	<a href="lightnovel" class="nav-link" id="LightNovel">Light Novel</a>
+      </li>
+
+      <li class="nav-items">
+      	<a href="homemade" class="nav-link">Homemade Novel</a>
+      </li>
+      
+      <li class="nav-items">
+      	<a href="article" class="nav-link">Article</a>
+      </li>
+    </ul>
+
+
+
+    </div>
+</nav>
+
+<!--login-->
+
+
+<div class="card">
+<article class="card-body">
+  <h4 class="card-title text-center mb-4 mt-1">Account Information</h4>
+  <hr>
+  <p class="text-success text-center">Here is your account information</p>
+  <table id="userif" style="width: 100%;border-collapse: collapse;">
+    <tr>
+      <td>Your username is:</td>
+      <td>{{ username }}</td>
+    </tr>
+    <tr>
+      <td>Your email is:</td>
+      <td>{{ email }}</td>
+    </tr>
+    <tr>
+      <td>Your age is:</td>
+      <td>{{ age }}</td>
+    </tr>
+    <tr>
+      <td>click here to comment</td>
+      <td><button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#star">Comment</button></td>
+    </tr>
+    <tr>
+      <td>click here to see comment</td>
+      <td><a href="showcomment"><button class="btn btn-outline-success my-2 my-sm-0" type="button" name="showcomment">See</button><a></td>
+    </tr>
+    <tr>
+      <td>click here to upload article</td>
+      <td><button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#upload" type="button" name="article">Upload</button></td>
+    </tr>
+    <tr>
+      <td>click here to read article</td>
+      <td><a href="showarticle"><button class="btn btn-outline-success my-2 my-sm-0" name="showarticle">Read</button><a></td>
+    </tr>
+
+  </table>
+
+</article>
+
+
+
+
+</div>
+
+
+<!-- ==========================carousel==================================== -->
+
+<div id="book" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#book" data-slide-to="0" class="active"></li>
+    <li data-target="#book" data-slide-to="1"></li>
+    <li data-target="#book" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner" style="clear: left;">
+    <div class="carousel-item active">
+      <a href="science">
+      <img src="{{url_for('static', filename='bookjpg/book1.jpg')}}" width="690" height="500" style="width: 100%">
+      <div class="carousel-caption">
+        <h3 style="color: red">Books are everything</h3>
+        <p style="color: red">The forum for you to comment in book!</p>
+      </div>
+      </a>   
+    </div>
+
+    <div class="carousel-item" style="clear: left;">
+      <a href="science">
+      <img src="{{url_for('static', filename='bookjpg/book2.jpg')}}" width="690" height="500" style="width: 100%">
+      <div class="carousel-caption">
+        <h3 style="color: red">Books can change your life</h3>
+        <p style="color: red">You can upload you own Novel in here!</p>
+      </div> 
+      </a>  
+    </div>
+
+    <div class="carousel-item" style="clear: left;">
+      <a href="lightnovel">
+      <img src="{{url_for('static', filename='bookjpg/book3.jpg')}}" width="690" height="500" style="width: 100%">
+      <div class="carousel-caption">
+        <h3 style="color: red">Be Relax in Books</h3>
+        <p style="color: red">You can also write a short article in here!</p>
+      </div>  
+      </a> 
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#book" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#book" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+
+<br>
+
+<div class="row">
+
+    <div class="col-lg-6 col-xs-12">
+      <a href="science">
+    <img src="{{url_for('static', filename='bookjpg/book4.jpg')}}" style="width: 100%"> 
+    <h3 style="color: red">Click here to go to Common Novel</h3>   
+  </a>
+  </div>
+
+
+    <div class="col-lg-6 col-xs-12">
+      <a href="lightnovel">
+    <img src="{{url_for('static', filename='bookjpg/book5.jpg')}}" style="width: 100%"> 
+    <h3 style="color: red">Click here to go to Light Novel</h3> 
+  </a>
+    </div>
+
+    <div class="col-lg-6 col-xs-12">
+      <a href="homemade">
+    <img src="{{url_for('static', filename='bookjpg/book6.jpg')}}" style="width: 100%"> 
+    <h3 style="color: red">Click here to go to Homemade Novel</h3> 
+  </a>
+    </div>
+
+    <div class="col-lg-6 col-xs-12">
+      <a href="article">
+    <img src="{{url_for('static', filename='bookjpg/book7.jpg')}}" style="width: 100%"> 
+    <h3 style="color: red">Click here to go to Article Novel</h3> 
+  </a>
+    </div>
+
+    </div>
+</div>
+
+<div class="modal" id="star" action="showbookname">
+    <div class="modal-dialog">
+      <div class="modal-content">
+<form method="POST" action="comment" id="comment" name="comment">
+        <div class="modal-body">
+          Book id: <div id="demo"></div>
+          <hr>
+         
+          Enter the book id:<br>
+          <input name="bkid" class="form-control" placeholder="Input the book id" type="text">
+          <label for="Comment">Comment:</label><br>
+          <textarea placeholder="Comment" id="Comment" name="comment" row="5" col="40"></textarea><br>
+          Enter your user id:
+          <input name="useridcomment" class="form-control" placeholder="Input your user id" type="text">
+       
+        </div>
+        
+
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <div class="form-group row">
+
+           <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Send</button>
+           </div>
+
+         </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal" id="upload" action="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+<form method="POST" action="upload" id="upload" name="upload">
+        <div class="modal-body">
+          Enter the user id:<br>
+          <input name="useridupload" class="form-control" placeholder="Input the user id" type="text">
+          <label for="Comment">Article:</label><br>
+          <textarea placeholder="article" id="content" name="content" row="40" col="50"></textarea><br>
+        </div>
+        
+
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <div class="form-group row">
+
+           <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Send</button>
+           </div>
+
+         </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

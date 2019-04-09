@@ -1,0 +1,59 @@
+.container.demo{
+	background: #cce0ff;
+	height: 400vh;
+    color: green;
+
+}
+
+
+.container.demo.row{
+	background: #ffffb3;
+	border-bottom: 1px solid #000;
+	height:30vh;
+}
+
+.container.demo .row > div > span{
+	display: block;
+	background: #0047b3;
+	color: white;
+	font-size: 64px;
+	padding: 5px;
+    border: 1px solid #021d50;
+}
+
+#sidebar_left{
+　background-color: lightblue;
+　width:200px;
+　height:400px;
+　text-align:center;
+　line-height:400px;
+　float:left;
+
+}
+
+textarea{
+	margin: 2%;
+	width: 85%;
+}
+
+
+
+.modal{
+	margin-top: 10%;
+}
+
+#Enter{
+	float: right;
+	width: 15%;
+}
+
+#Person{
+	width: 20%;
+	height:auto;
+	float: left;
+}
+
+#Talk{
+	width: 80%;
+	float: right;
+}

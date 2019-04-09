@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Martial Art</title>
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  function getid(checkid){
+
+  document.getElementById("demo").innerHTML = checkid;
+  }
+</script>
+</head>
+<body>
+  <div class="container" style="margin: 0 auto;width:1000px;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Martial Art</a>
+
+    <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      
+        <form class="form-inline">
+          <a href="science.html">
+           <button href="science.html" class="btn btn-outline-success" type="button" >Science</button>
+         </a>
+         <a href="martialart.html">
+           <button href="martialart.html" class="btn btn-outline-success active" type="button">Martial Art</button>
+         </a>
+        </form>
+
+      <li class="nav-items">
+        <a href="" class="nav-link"></a>
+      </li>
+
+     </ul>
+   </div>
+</nav>
+
+
+
+<!--https://www.theverge.com/2017/1/5/13811144/sci-fi-fantasy-book-recommendations-2017-->
+
+<div id="sidebar_left" style="background-color: lightblue;">
+
+    <div class="row justify-content-center">
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/booksword.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/cat.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/combatcode.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/knuckle.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-center">
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/secret.jpg')}}" alt="The Stars are Legion by Kameron Hurley" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/seishinshuyo.jpg')}}" style="width: 220px;height:332.19px" data-target="">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/tom.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+
+    <div class="col-lg-3">
+      <img src="{{url_for('static', filename='martialartjpg/weight.jpg')}}" style="width: 220px;height:332.19px" data-target="#star" data-toggle="modal">
+    </div>
+    </div>
+    <br>
+
+
+
+<!-- book info. -->
+</div>
+
+</div>
+
+<div class="modal" id="star" action="showbookname">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">Book information</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        
+<form method="POST" action="comment">
+        <div class="modal-body">
+          Book id: <div id="demo"></div>
+          <hr>
+         
+          Enter the book id:<br>
+          <input name="bkid" class="form-control" placeholder="Input the book id" type="text">
+          <label for="Comment">Comment:</label><br>
+          <textarea placeholder="Comment" id="Comment" name="comment" row="5" col="40"></textarea><br>
+          Enter your user id:
+          <input name="userid" class="form-control" placeholder="Input your user id" type="text">
+       
+        </div>
+        
+
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <div class="form-group row">
+
+           <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Send</button>
+           </div>
+
+         </div>
+        </div>
+</form>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>
